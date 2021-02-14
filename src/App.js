@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
-import Cookies from "universal-cookie";
+// import Cookies from "universal-cookie";
 
-const cookies = new Cookies();
-cookies.set("_mcid", "_mcid", { path: "/" });
+// const cookies = new Cookies();
+// cookies.set("_mcid", "_mcid", { path: "/" });
 
 const CustomForm = ({ status, message, onValidated }) => {
   let email, name, lastName;
+
   const submit = () =>
     email &&
     name &&
@@ -21,17 +22,19 @@ const CustomForm = ({ status, message, onValidated }) => {
   return (
     <div>
       {status === "sending" && (
-        <div style={{ color: "blue" }}>Procesiramo zahtevo...</div>
+        <div className="w-48 sm:w-96 mt-2 ml-2 text-justify text-blue-400">
+          Prosimo, počakajte trenutek ...
+        </div>
       )}
       {status === "error" && (
         <div
-          style={{ color: "red" }}
+          className="w-48 sm:w-96 mt-2 ml-2 text-justify text-red-500"
           dangerouslySetInnerHTML={{ __html: message }}
         />
       )}
       {status === "success" && (
         <div
-          style={{ color: "green" }}
+          className="w-48 sm:w-96 mt-2 ml-2 text-justify text-green-400"
           dangerouslySetInnerHTML={{ __html: message }}
         />
       )}
@@ -71,7 +74,7 @@ class App extends Component {
       "https://mc.us1.list-manage.com/signup-form/subscribe?u=a1a2a72f7947c0ba298da3344&id=0089ace1f0";
 
     return (
-      <div className="flex justify-center h-screen bg-back bg-cover bg-no-repeat bg-center md:bg-top  ...">
+      <div className="flex justify-center h-screen bg-black bg-back bg-cover bg-no-repeat bg-center md:bg-top  ...">
         <div className="mt-4 md:mt-24 ml-16 md:-ml-16">
           <p>Photo by Nitin Arya from Pexels</p>
           <h1 className="ml-2 font-sans font-semibold text-md md:text-2xl text-white ...">
