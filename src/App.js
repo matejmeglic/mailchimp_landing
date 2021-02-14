@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
-// import Cookies from "universal-cookie";
-
-// const cookies = new Cookies();
-// cookies.set("_mcid", "_mcid", { path: "/" });
 
 const CustomForm = ({ status, message, onValidated }) => {
   let email, name, lastName;
@@ -34,7 +30,7 @@ const CustomForm = ({ status, message, onValidated }) => {
       )}
       {status === "success" && (
         <div
-          className="w-48 sm:w-96 mt-2 ml-2 text-justify text-green-400"
+          className="bg-black bg-opacity-40 md:bg-opacity-0 w-48 sm:w-96 mt-2 ml-2 text-justify text-green-400"
           dangerouslySetInnerHTML={{ __html: message }}
         />
       )}
