@@ -70,33 +70,35 @@ class App extends Component {
       "https://mc.us1.list-manage.com/signup-form/subscribe?u=a1a2a72f7947c0ba298da3344&id=0089ace1f0";
 
     return (
-      <div className="flex justify-center h-screen bg-black bg-back bg-cover bg-no-repeat bg-center md:bg-top  ...">
-        <div className="mt-4 md:mt-24 ml-16 md:-ml-16">
-          <p>Photo by Nitin Arya from Pexels</p>
-          <h1 className="ml-2 font-sans font-semibold text-md md:text-2xl text-white ...">
-            Knjiga o gradnji hiše 2021
-          </h1>
-          <p className="w-48 sm:w-96 mt-2 ml-2 font-sans font-light text-sm md:text-md text-white text-justify ...">
-            Dobrodošli!
-            <br />V kolikor želite prejemati ažurne informacije o nastanku
-            knjige, ki piše o vseh mogočih pasteh pri gradnji hiše v letu 2021,
-            se prijavite na email listo, preko katere vas bo avtor občasno
-            obveščal o poteku pisanja knjige.
-          </p>
-          <MailchimpSubscribe
-            url={url}
-            render={({ subscribe, status, message }) => (
-              <CustomForm
-                status={status}
-                message={message}
-                onValidated={(formData) => subscribe(formData)}
-              />
-            )}
-          />
-          <p className="mt-1 font-sans font-light text-sm md:text-md text-white text-center ...">
-            <a href="https://matejmeglic.com">Matej Meglič</a>{" "}
-            {new Date().getFullYear()}
-          </p>
+      <div className="bg-black">
+        <div className="flex justify-center h-screen bg-back bg-cover bg-no-repeat bg-center md:bg-top  ...">
+          <div className="mt-4 md:mt-24 ml-16 md:-ml-16">
+            <p>Photo by Nitin Arya from Pexels</p>
+            <h1 className="ml-2 font-sans font-semibold text-md md:text-2xl text-white ...">
+              Knjiga o gradnji hiše 2021
+            </h1>
+            <p className="w-48 sm:w-96 mt-2 ml-2 font-sans font-light text-sm md:text-md text-white text-justify ...">
+              Dobrodošli!
+              <br />V kolikor želite prejemati ažurne informacije o nastanku
+              knjige, ki piše o vseh mogočih pasteh pri gradnji hiše v letu
+              2021, se prijavite na email listo, preko katere vas bo avtor
+              občasno obveščal o poteku pisanja knjige.
+            </p>
+            <MailchimpSubscribe
+              url={url}
+              render={({ subscribe, status, message }) => (
+                <CustomForm
+                  status={status}
+                  message={message}
+                  onValidated={(formData) => subscribe(formData)}
+                />
+              )}
+            />
+            <p className="mt-1 font-sans font-light text-sm md:text-md text-white text-center ...">
+              <a href="https://matejmeglic.com">Matej Meglič</a>{" "}
+              {new Date().getFullYear()}
+            </p>
+          </div>
         </div>
       </div>
     );
